@@ -1,7 +1,7 @@
 import csv
 
 with open('California_Fire_Perimeters_(all).csv') as read_file:
-    with open('result.csv', mode='w', newline='') as write_file:
+    with open('result2020.csv', mode='w', newline='') as write_file:
         read_file = csv.reader(read_file, delimiter=',')
         write_file = csv.writer(write_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         line_count = 0
@@ -15,7 +15,7 @@ with open('California_Fire_Perimeters_(all).csv') as read_file:
             # all other rows
             else:
                 # if the year is between 2018 - 2020, write that row of data into the new file
-                if(row[1] == '2020' or row[1] == '2019' or row[1] == '2018'):
+                if(row[1] == '2020'):
                     # print(row)
                     write_file.writerow(row)
                     line_count += 1
